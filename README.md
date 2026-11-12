@@ -2,7 +2,7 @@
 
 A concept landing page for a 4-inch companion display designed to be put down.
 
-Live site: _pending first deployment_
+Live site: [https://sidekick-ashen.vercel.app](https://sidekick-ashen.vercel.app)
 
 ![Sidekick companion display](web/public/renders/stage.webp)
 
