@@ -2,6 +2,7 @@ import { ArrowDownRight } from "@phosphor-icons/react";
 import { motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import type { FinishId } from "../lib/palettes";
+import { onAnchorClick } from "../lib/scroll";
 import { ProductStage } from "./ProductStage";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -47,11 +48,15 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4"
               {...enter(0.26)}
             >
-              <a href="#waitlist" className="btn btn-primary">
+              <a
+                href="#waitlist"
+                onClick={onAnchorClick}
+                className="btn btn-primary"
+              >
                 Join the waitlist
                 <ArrowDownRight size={16} weight="bold" />
               </a>
-              <a href="#object" className="text-link">
+              <a href="#object" onClick={onAnchorClick} className="text-link">
                 See the object
                 <ArrowDownRight size={15} weight="bold" />
               </a>

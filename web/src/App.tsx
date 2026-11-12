@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { onAnchorClick, scrollToId } from "./lib/scroll";
 import { FinishesSection } from "./components/FinishesSection";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
@@ -16,10 +17,9 @@ export default function App() {
   useEffect(() => {
     const hash = window.location.hash;
     if (!hash || hash.length < 2) return;
-    const target = document.getElementById(hash.slice(1));
-    if (!target) return;
+    const id = hash.slice(1);
     const scroll = () => {
-      target.scrollIntoView({ behavior: "instant", block: "start" });
+      scrollToId(id, "instant");
     };
     const frame = window.requestAnimationFrame(scroll);
     // Re-align after webfonts and the lazy 3D chunk settle the layout.
@@ -34,6 +34,7 @@ export default function App() {
     <>
       <a
         href="#main"
+        onClick={onAnchorClick}
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-[0.875rem] focus:text-cream"
       >
         Skip to content

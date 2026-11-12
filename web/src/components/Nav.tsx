@@ -1,4 +1,5 @@
 import { ArrowDownRight } from "@phosphor-icons/react";
+import { onAnchorClick } from "../lib/scroll";
 import { Wordmark } from "./Wordmark";
 
 const links = [
@@ -14,6 +15,7 @@ export function Nav() {
       <div className="wrap flex h-[72px] items-center justify-between gap-6">
         <a
           href="#top"
+          onClick={onAnchorClick}
           className="shrink-0 no-underline"
           aria-label="Sidekick, back to top"
         >
@@ -28,6 +30,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
+              onClick={onAnchorClick}
               className="text-[0.8125rem] font-medium text-ink-soft no-underline transition-colors duration-150 hover:text-ink"
             >
               {link.label}
@@ -37,6 +40,7 @@ export function Nav() {
 
         <a
           href="#waitlist"
+          onClick={onAnchorClick}
           className="btn btn-dark"
           style={{ minHeight: 40, padding: "0.55rem 1.05rem", fontSize: "0.8125rem" }}
         >

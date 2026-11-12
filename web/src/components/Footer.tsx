@@ -1,3 +1,4 @@
+import { onAnchorClick } from "../lib/scroll";
 import { Wordmark } from "./Wordmark";
 
 const links = [
@@ -25,6 +26,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    onClick={onAnchorClick}
                     className="text-[0.8125rem] text-ink-soft no-underline transition-colors duration-150 hover:text-ink"
                   >
                     {link.label}
