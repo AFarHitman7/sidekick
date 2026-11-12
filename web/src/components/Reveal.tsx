@@ -23,8 +23,8 @@ export function Reveal({
     <MotionTag
       data-reveal=""
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduce ? false : { y: 18 }}
+      whileInView={{ y: 0 }}
       viewport={{ once: true, amount }}
       transition={{
         duration: 0.7,

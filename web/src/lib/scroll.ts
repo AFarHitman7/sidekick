@@ -24,6 +24,10 @@ export function onAnchorClick(event: MouseEvent<HTMLAnchorElement>) {
   const href = event.currentTarget.getAttribute("href");
   if (!href || !href.startsWith("#") || href.length < 2) return;
   event.preventDefault();
-  scrollToId(href.slice(1));
-  window.history.replaceState(null, "", href);
+  const id = href.slice(1);
+  // Run after the browser's own anchor handling so the offset wins.
+  window.requestAnimationFrame(() => {
+    scrollToId(id, "instant");
+    window.history.replaceState(null, "", href);
+  });
 }
